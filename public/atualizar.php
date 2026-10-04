@@ -8,8 +8,12 @@ $faixa_etaria=$_POST["faixa_etaria"];
 $preco=$_POST["preco"];
 $estoque=$_POST["estoque"];
 
-$sql = "UPDATE Brinquedos SET nome='$nome',categori='$categori',faixa_etaria='$faixa_etaria',preco='$preco',estoque='$estoque' WHERE id='$id'";
+$stmt = $conn->prepare("UPDATE Brinquedos SET nome=?,categori=?,faixa_etaria=?,preco=?,estoque=? WHERE id='$id'");
 
-mysqli_query($conn, $sql);
-header("Location: ../index.php");
+$stmt->bind_param("sssii", $nome, $categori, $faixa_etaria, $preco, $estoque);
+
+$stmt->execute();
+
+$stmt->close();
+header("location: ../index.php");
 ?>
