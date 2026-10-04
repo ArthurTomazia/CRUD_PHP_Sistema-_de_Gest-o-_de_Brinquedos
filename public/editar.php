@@ -2,9 +2,15 @@
 include "../infra/connection.php";
 
 $id=$_GET["id"];
-$sql = "SELECT * FROM Brinquedos WHERE id=$id";
-$resultado = mysqli_query($conn, $sql);
-$brinquedo = mysqli_fetch_assoc($resultado);
+
+$stmt = $conn->prepare("SELECT * FROM Brinquedos WHERE id=?");
+$stmt->bind_param("i",$id);
+$stmt->execute();
+
+$resultado = $stmt->get_result();
+$brinquedo = $resultado->fetch_assoc();
+
+$stmt->close();
 ?>
 
 <!DOCTYPE html>
