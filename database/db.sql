@@ -6,6 +6,6 @@ CREATE TABLE Brinquedos(
     nome varchar(255) not null,
     categori varchar(255) not null,
     faixa_etaria int not null,
-    preco float not null,
+    preco DECIMAL(10,2) not null,
     estoque int not null
 );

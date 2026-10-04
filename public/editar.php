@@ -50,7 +50,7 @@ $stmt->close();
         <label for="estoque">Estoque disponivel:</label>
         <input type="number" name="estoque" value="<?php echo $brinquedo["estoque"]?>" required>
         <br>
-        <button type="submit">Cadastrar Brinquedo</button>
+        <button type="submit">Editar Brinquedo</button>
     </form>
 
 
