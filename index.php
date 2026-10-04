@@ -28,7 +28,7 @@ $Brinquedos = mysqli_query($conn, "SELECT * FROM Brinquedos");
         <br>
 
         <label for="faixa_etaria">Faixa etaria do brinquedo: </label>
-        <input type="text" name="faixa_etaria" required>
+        <input type="number" name="faixa_etaria" required>
         <br>
 
         <label for="preco">Preço do brinquedo: </label>
