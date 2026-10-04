@@ -44,7 +44,7 @@ $stmt->close();
         <br>
 
         <label for="preco">Preço do brinquedo: </label>
-        <input type="number" name="preco" value="<?php echo $brinquedo["preco"]?>" required>
+        <input type="number" name="preco" step="0.01" value="<?php echo $brinquedo["preco"]?>" required>
         <br>
 
         <label for="estoque">Estoque disponivel:</label>

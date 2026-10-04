@@ -32,7 +32,7 @@ $Brinquedos = mysqli_query($conn, "SELECT * FROM Brinquedos");
         <br>
 
         <label for="preco">Preço do brinquedo: </label>
-        <input type="number" name="preco" required>
+        <input type="number" name="preco" step="0.01" required>
         <br>
 
         <label for="estoque">Estoque disponivel:</label>
