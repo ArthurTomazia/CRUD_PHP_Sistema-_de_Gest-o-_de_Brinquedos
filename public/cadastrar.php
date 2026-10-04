@@ -8,10 +8,13 @@ include "../infra/connection.php";
     $preco=$_POST["preco"];
     $estoque=$_POST["estoque"];
 
-$sql = "INSERT INTO Brinquedos(nome,categori,faixa_etaria,preco,estoque) VALUES ('$nome','$categori','$faixa_etaria','$preco','$estoque')";
+$stmt = $conn->prepare("INSERT INTO Brinquedos(nome,categori,faixa_etaria,preco,estoque) VALUES (?,?,?,?,?)");
 
-mysqli_query($conn, $sql);
+$stmt->bind_param("sssii", $nome, $categori, $faixa_etaria, $preco, $estoque);
 
+$stmt->execute();
+
+$stmt->close();
 header("location: ../index.php");
 
 ?>
